@@ -10,6 +10,6 @@ public class HelloController {
 
     @GetMapping("/sayHello")
     public String respond() {
-        return "Hello from AWS !!";
+        return "Hello from Rupesh  !!";
     }
 }
