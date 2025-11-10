@@ -1,5 +1,7 @@
 spring.application.name: AWSDeployable
-server.port: 8080
+server.port: 8081
 server.address: 0.0.0.0
 management.endpoints.web.exposure.include: health
 management.endpoint.health.show-details: always
+spring.data.mongodb.uri: mongodb+srv://rupeshmathur:mathur1992@atlascluster.geucstt.mongodb.net/notification_db?retryWrites=true&w=majority&tls=true
+spring.task.scheduling.time-zone: Asia/Kolkata
