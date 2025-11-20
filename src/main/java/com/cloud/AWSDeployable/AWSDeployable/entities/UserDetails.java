@@ -14,7 +14,7 @@ public class UserDetails {
     private String name;
     private String email;
     private String phone;
-    private boolean whatsapp;
+    private boolean isPhoneSameAsWhatsapp;
     private boolean subscribeNotifications;
 
     private boolean workEmailProvided;
@@ -25,13 +25,13 @@ public class UserDetails {
 
     public UserDetails() {}
 
-    public UserDetails(String name, String email, String phone, boolean whatsapp,
+    public UserDetails(String name, String email, String phone, boolean isPhoneSameAsWhatsapp,
                        boolean subscribeNotifications, boolean workEmailProvided, String workEmail,
                        List<String> notificationFrequencies) {
         this.name = name;
         this.email = email;
         this.phone = phone;
-        this.whatsapp = whatsapp;
+        this.isPhoneSameAsWhatsapp = isPhoneSameAsWhatsapp;
         this.subscribeNotifications = subscribeNotifications;
         this.workEmailProvided = workEmailProvided;
         this.workEmail = workEmail;
@@ -71,12 +71,12 @@ public class UserDetails {
         this.phone = phone;
     }
 
-    public boolean isWhatsapp() {
-        return whatsapp;
+    public boolean isPhoneSameAsWhatsapp() {
+        return isPhoneSameAsWhatsapp;
     }
 
-    public void setWhatsapp(boolean whatsapp) {
-        this.whatsapp = whatsapp;
+    public void setPhoneSameAsWhatsapp(boolean phoneSameAsWhatsapp) {
+        this.isPhoneSameAsWhatsapp = phoneSameAsWhatsapp;
     }
 
     public boolean isSubscribeNotifications() {
@@ -118,7 +118,7 @@ public class UserDetails {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", whatsapp=" + whatsapp +
+                ", whatsapp=" + isPhoneSameAsWhatsapp +
                 ", subscribeNotifications=" + subscribeNotifications +
                 ", workEmailProvided=" + workEmailProvided +
                 ", workEmail='" + workEmail + '\'' +

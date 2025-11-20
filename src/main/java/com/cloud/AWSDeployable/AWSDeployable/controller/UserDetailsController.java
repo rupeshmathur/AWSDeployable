@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/notifications/add")
-@CrossOrigin(origins = "http://localhost:3000") // allow React app
 public class UserDetailsController {
 
     public NotificationService notificationService;
@@ -20,7 +19,16 @@ public class UserDetailsController {
     }
 
     @PostMapping("/users/subscribedForNotifications")
-    public String receiveDetails(@RequestBody List<UserDetailsDTO> userDetails) {
+    @CrossOrigin
+    public String bulkSubscription(@RequestBody List<UserDetailsDTO> userDetails) {
+        System.out.println("Received user details: " + userDetails);
+        notificationService.subscribeUserToNotifications(userDetails);
+        return "User details received successfully!";
+    }
+
+    @PostMapping("/user/subscribe")
+    @CrossOrigin
+    public String addUser(@RequestBody UserDetailsDTO userDetails) {
         System.out.println("Received user details: " + userDetails);
         notificationService.subscribeUserToNotifications(userDetails);
         return "User details received successfully!";

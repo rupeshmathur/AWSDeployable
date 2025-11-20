@@ -1,16 +1,52 @@
 package com.cloud.AWSDeployable.AWSDeployable.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class UserDetailsDTO {
+
     private String name;
     private String email;
     private String phone;
+
+    @JsonProperty("isPhoneSameAsWhatsapp") // maps JSON field to Java field
     private boolean isPhoneSameAsWhatsapp;
+
+    @JsonProperty("isWorkEmailProvided")
     private boolean isWorkEmailProvided;
+
     private String workEmail;
-    private boolean isSubscribed;
+
+    @JsonProperty("subscribeNotifications")
+    private boolean subscribeNotifications;
+
     private List<String> notificationFrequency;
+
+    // getters and setters
+    public boolean isPhoneSameAsWhatsapp() {
+        return isPhoneSameAsWhatsapp;
+    }
+
+    public void setPhoneSameAsWhatsapp(boolean phoneSameAsWhatsapp) {
+        this.isPhoneSameAsWhatsapp = phoneSameAsWhatsapp;
+    }
+
+    public boolean isWorkEmailProvided() {
+        return isWorkEmailProvided;
+    }
+
+    public void setWorkEmailProvided(boolean workEmailProvided) {
+        this.isWorkEmailProvided = workEmailProvided;
+    }
+
+    public boolean isSubscribeNotifications() {
+        return subscribeNotifications;
+    }
+
+    public void setSubscribeNotifications(boolean subscribeNotifications) {
+        this.subscribeNotifications = subscribeNotifications;
+    }
 
     public String getName() {
         return name;
@@ -36,36 +72,12 @@ public class UserDetailsDTO {
         this.phone = phone;
     }
 
-    public boolean isPhoneSameAsWhatsapp() {
-        return isPhoneSameAsWhatsapp;
-    }
-
-    public void setPhoneSameAsWhatsapp(boolean phoneSameAsWhatsapp) {
-        isPhoneSameAsWhatsapp = phoneSameAsWhatsapp;
-    }
-
-    public boolean isWorkEmailProvided() {
-        return isWorkEmailProvided;
-    }
-
-    public void setWorkEmailProvided(boolean workEmailProvided) {
-        this.isWorkEmailProvided = workEmailProvided;
-    }
-
     public String getWorkEmail() {
         return workEmail;
     }
 
     public void setWorkEmail(String workEmail) {
         this.workEmail = workEmail;
-    }
-
-    public boolean isSubscribed() {
-        return isSubscribed;
-    }
-
-    public void setSubscribed(boolean subscribed) {
-        this.isSubscribed = subscribed;
     }
 
     public List<String> getNotificationFrequency() {
@@ -78,15 +90,15 @@ public class UserDetailsDTO {
 
     @Override
     public String toString() {
-        return "UserDetails{" +
+        return "UserDetailsDTO{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", isWhatsApp=" + isPhoneSameAsWhatsapp +
-                ", wantsWorkEmail=" + isWorkEmailProvided +
+                ", isPhoneSameAsWhatsapp=" + isPhoneSameAsWhatsapp +
+                ", isWorkEmailProvided=" + isWorkEmailProvided +
                 ", workEmail='" + workEmail + '\'' +
-                ", subscribe=" + isSubscribed +
-                ", frequency=" + notificationFrequency +
+                ", subscribeNotifications=" + subscribeNotifications +
+                ", notificationFrequency=" + notificationFrequency +
                 '}';
     }
 }

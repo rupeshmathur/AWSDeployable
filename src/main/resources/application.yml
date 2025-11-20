@@ -5,3 +5,12 @@ management.endpoints.web.exposure.include: health
 management.endpoint.health.show-details: always
 spring.data.mongodb.uri: mongodb+srv://rupeshmathur:mathur1992@atlascluster.geucstt.mongodb.net/notification_db?retryWrites=true&w=majority&tls=true
 spring.task.scheduling.time-zone: Asia/Kolkata
+twilio.account-sid: ACc35715799fe64887f022c2980487202c
+twilio.auth-token: c6790747319d77793597daeb3fe8310f
+twilio.phone-number: whatsapp:+14155238886  # Twilio sandbox number
+spring.mail.host: smtp.gmail.com
+spring.mail.port: 587
+spring.mail.username: mathurupesh92@gmail.com
+spring.mail.password: pmyr jebb tnpz vpwu
+spring.mail.properties.mail.smtp.auth: true
+spring.mail.properties.mail.smtp.starttls.enable: true

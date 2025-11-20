@@ -26,8 +26,8 @@ public class NotificationService {
                     entity.setName(dto.getName());
                     entity.setEmail(dto.getEmail());
                     entity.setPhone(dto.getPhone());
-                    entity.setWhatsapp(dto.isPhoneSameAsWhatsapp());
-                    entity.setSubscribeNotifications(dto.isSubscribed());
+                    entity.setPhoneSameAsWhatsapp(dto.isPhoneSameAsWhatsapp());
+                    entity.setSubscribeNotifications(dto.isSubscribeNotifications());
                     entity.setWorkEmailProvided(dto.isWorkEmailProvided());
                     entity.setWorkEmail(dto.getWorkEmail());
                     entity.setNotificationFrequencies(dto.getNotificationFrequency());
@@ -36,6 +36,22 @@ public class NotificationService {
                 .collect(Collectors.toList());
 
         userDetailsRepository.saveAll(users);
+    }
+
+    public void subscribeUserToNotifications(UserDetailsDTO userDetailsDTO) {
+        System.out.println("isPhoneSameAsWhatsapp : " + userDetailsDTO.isPhoneSameAsWhatsapp());
+        System.out.println("subscribeNotifications : " + userDetailsDTO.isSubscribeNotifications());
+        UserDetails entity = new UserDetails();
+        entity.setName(userDetailsDTO.getName());
+        entity.setEmail(userDetailsDTO.getEmail());
+        entity.setPhone(userDetailsDTO.getPhone());
+        entity.setPhoneSameAsWhatsapp(userDetailsDTO.isPhoneSameAsWhatsapp());
+        entity.setSubscribeNotifications(userDetailsDTO.isSubscribeNotifications());
+        entity.setWorkEmailProvided(userDetailsDTO.isWorkEmailProvided());
+        entity.setWorkEmail(userDetailsDTO.getWorkEmail());
+        entity.setNotificationFrequencies(userDetailsDTO.getNotificationFrequency());
+
+        userDetailsRepository.save(entity);
     }
 
 }
