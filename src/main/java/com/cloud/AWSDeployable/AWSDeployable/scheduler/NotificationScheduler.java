@@ -6,6 +6,7 @@ import com.cloud.AWSDeployable.AWSDeployable.entities.UserDetails;
 import com.cloud.AWSDeployable.AWSDeployable.repository.UserDetailsRepository;
 import com.cloud.AWSDeployable.AWSDeployable.service.PushNotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +26,7 @@ public class NotificationScheduler {
     }
 
     // 🕖 Every day at 7 AM
-    @Scheduled(cron = "0 04 22 * * *")
+    @Scheduled(fixedRate = 500000)
     public void sendDailyNotifications() {
         Optional<List<UserDetails>> users = userDetailsRepository.isSubscribedForDaily();
         if(users.isEmpty()){
