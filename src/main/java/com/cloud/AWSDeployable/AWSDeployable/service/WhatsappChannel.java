@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class WhatsappChannel implements ChannelInterface {
 
-    @Value("${twilio.phone-number}")
-    private String fromNumber;
 
     @Override
     public void sendMessage(String from, String to, String subject, String body) {
