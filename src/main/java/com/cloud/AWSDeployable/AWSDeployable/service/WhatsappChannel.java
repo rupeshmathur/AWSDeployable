@@ -1,7 +1,6 @@
 package com.cloud.AWSDeployable.AWSDeployable.service;
 
 import com.cloud.AWSDeployable.AWSDeployable.model.ChannelInterface;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
